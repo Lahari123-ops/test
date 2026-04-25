@@ -53,10 +53,16 @@
 
             <Table
                 id="tableId"
-                items="{/Orders}"
                 growing="true"
                 growingThreshold="20"
-                growingScrollToLoad="true">
+                growingScrollToLoad="true"
+                items="{
+        path: '/Orders',
+        sorter: [
+            { path: 'OrderDate', descending: false },
+            { path: 'Freight', descending: true }
+        ]
+    }">
 
                 <columns>
                     <Column><Text text="Order ID"/></Column>
