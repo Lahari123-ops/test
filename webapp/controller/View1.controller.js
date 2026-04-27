@@ -1,11 +1,14 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator"
-], function (Controller, Filter, FilterOperator) {
+    "sap/ui/model/FilterOperator",
+    "basic/model/formatter"
+], function (Controller, Filter, FilterOperator,formatter) {
     "use strict";
 
+
     return Controller.extend("basic.controller.View1", {
+        formatter:formatter,
 
         onInit: function () {
         },

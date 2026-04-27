@@ -80,8 +80,8 @@
                             <Text text="{OrderID}"/>
                             <Text text="{CustomerID}"/>
                             <Text text="{EmployeeID}"/>
-                            <Text text="{path:'OrderDate', formatter:'.formatDate'}"/>
-                            <Text text="{path:'RequiredDate', formatter:'.formatDate'}"/>
+                            <Text text="{path:'OrderDate', formatter:'.formatter.formatDate'}"/>
+                            <Text text="{path:'RequiredDate', formatter:'.formatter.formatDate'}"/>
                             <Text text="{ShipCountry}"/>
                             <Text text="{Freight}"/>
                         </cells>
