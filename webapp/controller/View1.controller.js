@@ -69,7 +69,43 @@ if (sMin && sMax) {
             var oTable = this.byId("tableId");
             var oBinding = oTable.getBinding("items");
             oBinding.filter(aFilters);
-        }
+        },
+        onDelete: function(oEvent){
+    var oItem = oEvent.getSource().getParent().getParent();
+    var oTable = this.byId("tableId");
+    oTable.removeItem(oItem);
+},
+onEdit: function (oEvent) {
+    var oContext = oEvent.getSource().getBindingContext();
+    var sPath = oContext.getPath();
+    var oModel = oContext.getModel();
+
+    var oInput = new sap.m.Input({
+        value: oModel.getProperty(sPath + "/Freight")
+    });
+
+    var oDialog = new sap.m.Dialog({
+        title: "Edit Freight",
+        content: [oInput],
+        beginButton: new sap.m.Button({
+            text: "Save",
+            press: function () {
+                oModel.setProperty(sPath + "/Freight", Number(oInput.getValue()));
+                oDialog.close();
+                oDialog.destroy();
+            }
+        }),
+        endButton: new sap.m.Button({
+            text: "Cancel",
+            press: function () {
+                oDialog.close();
+                oDialog.destroy();
+            }
+        })
+    });
+
+    oDialog.open();
+}
 
     });
 });

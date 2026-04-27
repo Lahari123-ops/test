@@ -74,6 +74,8 @@
                     <Column><Text text="Freight"/></Column>
                     <Column><Text text="Freight Status"/></Column>
                     <Column><Text text="Delivery Status"/></Column>
+                    <Column><Text text="Actions"/></Column>
+
                 </columns>
 
                 <items>
@@ -99,6 +101,10 @@
         parts:['RequiredDate','OrderDate'],
         formatter: '.formatter.formatDeliveryState'
     }"/>
+    <HBox>
+    <Button text="Edit" press=".onEdit"/>
+    <Button text="Delete" press=".onDelete"/>
+</HBox>
                         </cells>
                     </ColumnListItem>
                 </items>
